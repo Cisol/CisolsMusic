@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>add</title>
+</head>
+<body>
+    <form id="add" name="addMusic" method="post" action="#" th:action="@{/music/add}">
+        <table width="100%" border="0">
+            <tr>
+                <td width="100" height="40" align="right">音乐名&nbsp;</td>
+                <td><input type="text" name="musicName"/></td>
+            </tr>
+            <tr>
+                <td width="100" height="40" align="right">歌手ID&nbsp;</td>
+                <td><input type="text" name="mSingerId"/></td>
+            </tr>
+            <tr>
+                <td width="100" height="40" align="right">唱片ID&nbsp;</td>
+                <td><input type="text" name="mAlbumId"/></td>
+            </tr>
+            <tr>
+                <td width="100" height="40" align="right">音乐路径&nbsp;</td>
+                <td><input type="text" name="mUrl"/></td>
+            </tr>
+            <tr>
+                <td width="100" height="40" align="right"><button value="submit">提交</button></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

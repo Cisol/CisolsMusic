@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cisol.dao.mappers.MusicMapper">
+
+    <!-- 开启基于redis的二级缓存 -->
+    <!--<cache type="com.wooyoo.learning.util.RedisCache"/>-->
+
+    <select id="select" resultType="MusicEntity">
+        SELECT * FROM musics WHERE musicId = #{id} LIMIT 1
+    </select>
+
+    <update id="update" parameterType="MusicEntity" flushCache="true">
+        UPDATE musics SET musicName = #{musicName} WHERE id = #{id} LIMIT 1
+    </update>
+
+    <resultMap type="MusicEntity" id="musicList">
+        <result property="musicId" column="musicId"/>
+        <result property="musicName" column="musicName"/>
+        <result property="mSingerId" column="mSingerId"/>
+        <result property="mAlbumId" column="mAlbumId"/>
+        <result property="mUrl" column="mUrl"/>
+    </resultMap>
+
+    <select id="list" resultMap="musicList" flushCache="true">
+        SELECT * FROM musics
+    </select>
+
+    <insert id="add" parameterType="MusicEntity">
+        INSERT INTO musics (musicName, mSingerId, mAlbumId, mUrl)
+        VALUES (#{musicName}, #{mSingerId}, #{mAlbumId}, #{mUrl})
+    </insert>
+</mapper>

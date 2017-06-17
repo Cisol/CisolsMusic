@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <style type="text/css">
+            .td{border:solid #add9c0; border-width:0px 1px 1px 0px; padding:10px 0px;}
+            .table{border:solid #add9c0; border-width:1px 0px 0px 1px;}
+        </style>
+        <script type="text/javascript" th:src="@{/jquery-3.2.1.js}"></script>
+        <script type="text/javascript" th:src="@{/musicList.js}"></script>
+    </head>
+    <body>
+        <table id="list"
+               class="table">
+            <tr>
+                <th>音乐ID</th>
+                <th>音乐名</th>
+                <th>歌手ID</th>
+                <th>专辑ID</th>
+                <th>音乐路径</th>
+            </tr>
+        </table>
+    </body>
+</html>

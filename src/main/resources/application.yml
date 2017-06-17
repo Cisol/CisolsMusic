@@ -1,0 +1,23 @@
+# mybatis配置
+mybatis:
+  # 配置映射类所在包名
+  type-aliases-package: com.cisol.entity
+  # 配置mapper xml文件所在路径，这里是一个数组
+  mapper-locations:
+    - mappers/MusicMapper.xml
+
+spring:
+  # 数据库配置
+  datasource:
+    url: jdbc:mysql://localhost/cisolsmusic
+    username: root
+    password: 123456
+    driver-class-name: org.gjt.mm.mysql.Driver
+
+  thymeleaf:
+    cache: false
+    prefix: classpath:/templates/
+    suffix: .html
+    encoding: UTF-8
+    content-type: text/html
+    mode: HTML5
