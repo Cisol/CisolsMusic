@@ -18,6 +18,11 @@ public class MusicController {
     @Autowired
     private MusicMapper musicMapper;
 
+    @RequestMapping("/index")
+    public String index(ModelMap modelMap) {
+        return "index";
+    }
+
     /**
      * 跳转到添加音乐页面
      * @return
